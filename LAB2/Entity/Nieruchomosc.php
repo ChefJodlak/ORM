@@ -13,6 +13,11 @@ class Nieruchomosc
     private $typ_oferty;
 
     /**
+     * @var string
+     */
+    private $numer;
+
+    /**
      * @var float
      */
     private $powierzchnia;
@@ -36,6 +41,26 @@ class Nieruchomosc
      * @var \Entity\Mieszkanie
      */
     private $mieszkanie;
+
+    /**
+     * @var \Entity\Domy
+     */
+    private $domy;
+
+    /**
+     * @var \Entity\Grunty
+     */
+    private $grunty;
+
+    /**
+     * @var \Entity\Materialy
+     */
+    private $materialy;
+
+    /**
+     * @var \Entity\Dodatkowe
+     */
+    private $dodatkowe;
 
     /**
      * @var \Entity\Miasto
@@ -77,6 +102,30 @@ class Nieruchomosc
     public function getTypOferty()
     {
         return $this->typ_oferty;
+    }
+
+    /**
+     * Set numer.
+     *
+     * @param string $numer
+     *
+     * @return Nieruchomosc
+     */
+    public function setNumer($numer)
+    {
+        $this->numer = $numer;
+
+        return $this;
+    }
+
+    /**
+     * Get numer.
+     *
+     * @return string
+     */
+    public function getNumer()
+    {
+        return $this->numer;
     }
 
     /**
@@ -186,6 +235,102 @@ class Nieruchomosc
     }
 
     /**
+     * Set domy.
+     *
+     * @param \Entity\Domy|null $domy
+     *
+     * @return Nieruchomosc
+     */
+    public function setDomy(\Entity\Domy $domy = null)
+    {
+        $this->domy = $domy;
+
+        return $this;
+    }
+
+    /**
+     * Get domy.
+     *
+     * @return \Entity\Domy|null
+     */
+    public function getDomy()
+    {
+        return $this->domy;
+    }
+
+    /**
+     * Set grunty.
+     *
+     * @param \Entity\Grunty|null $grunty
+     *
+     * @return Nieruchomosc
+     */
+    public function setGrunty(\Entity\Grunty $grunty = null)
+    {
+        $this->grunty = $grunty;
+
+        return $this;
+    }
+
+    /**
+     * Get grunty.
+     *
+     * @return \Entity\Grunty|null
+     */
+    public function getGrunty()
+    {
+        return $this->grunty;
+    }
+
+    /**
+     * Set materialy.
+     *
+     * @param \Entity\Materialy|null $materialy
+     *
+     * @return Nieruchomosc
+     */
+    public function setMaterialy(\Entity\Materialy $materialy = null)
+    {
+        $this->materialy = $materialy;
+
+        return $this;
+    }
+
+    /**
+     * Get materialy.
+     *
+     * @return \Entity\Materialy|null
+     */
+    public function getMaterialy()
+    {
+        return $this->materialy;
+    }
+
+    /**
+     * Set dodatkowe.
+     *
+     * @param \Entity\Dodatkowe|null $dodatkowe
+     *
+     * @return Nieruchomosc
+     */
+    public function setDodatkowe(\Entity\Dodatkowe $dodatkowe = null)
+    {
+        $this->dodatkowe = $dodatkowe;
+
+        return $this;
+    }
+
+    /**
+     * Get dodatkowe.
+     *
+     * @return \Entity\Dodatkowe|null
+     */
+    public function getDodatkowe()
+    {
+        return $this->dodatkowe;
+    }
+
+    /**
      * Set miasto.
      *
      * @param \Entity\Miasto|null $miasto
@@ -245,148 +390,143 @@ class Nieruchomosc
         return $this->opcjekomunikacji;
     }
     /**
-     * @var varchar
-     */
-    private $numer;
-
-
-    /**
-     * Set numer.
-     *
-     * @param \varchar $numer
-     *
-     * @return Nieruchomosc
-     */
-    public function setNumer(\varchar $numer)
-    {
-        $this->numer = $numer;
-
-        return $this;
-    }
-
-    /**
-     * Get numer.
-     *
-     * @return \varchar
-     */
-    public function getNumer()
-    {
-        return $this->numer;
-    }
-    /**
      * @var \Entity\Domy
      */
-    private $domy;
+    private $dom;
 
     /**
      * @var \Entity\Grunty
      */
-    private $grunty;
+    private $grunt;
+
+    /**
+     * @var \Doctrine\Common\Collections\Collection
+     */
+    private $opcjedodatkowe;
+
+    /**
+     * @var \Doctrine\Common\Collections\Collection
+     */
+    private $opcjematerialu;
 
 
     /**
-     * Set domy.
+     * Set dom.
      *
-     * @param \Entity\Domy|null $domy
+     * @param \Entity\Domy|null $dom
      *
      * @return Nieruchomosc
      */
-    public function setDomy(\Entity\Domy $domy = null)
+    public function setDom(\Entity\Domy $dom = null)
     {
-        $this->domy = $domy;
+        $this->dom = $dom;
 
         return $this;
     }
 
     /**
-     * Get domy.
+     * Get dom.
      *
      * @return \Entity\Domy|null
      */
-    public function getDomy()
+    public function getDom()
     {
-        return $this->domy;
+        return $this->dom;
     }
 
     /**
-     * Set grunty.
+     * Set grunt.
      *
-     * @param \Entity\Grunty|null $grunty
+     * @param \Entity\Grunty|null $grunt
      *
      * @return Nieruchomosc
      */
-    public function setGrunty(\Entity\Grunty $grunty = null)
+    public function setGrunt(\Entity\Grunty $grunt = null)
     {
-        $this->grunty = $grunty;
+        $this->grunt = $grunt;
 
         return $this;
     }
 
     /**
-     * Get grunty.
+     * Get grunt.
      *
      * @return \Entity\Grunty|null
      */
-    public function getGrunty()
+    public function getGrunt()
     {
-        return $this->grunty;
+        return $this->grunt;
     }
-    /**
-     * @var \Entity\Materialy
-     */
-    private $materialy;
 
     /**
-     * @var \Entity\Dodatkowe
-     */
-    private $dodatkowe;
-
-
-    /**
-     * Set materialy.
+     * Add opcjedodatkowe.
      *
-     * @param \Entity\Materialy|null $materialy
+     * @param \Entity\Dodatkowe $opcjedodatkowe
      *
      * @return Nieruchomosc
      */
-    public function setMaterialy(\Entity\Materialy $materialy = null)
+    public function addOpcjedodatkowe(\Entity\Dodatkowe $opcjedodatkowe)
     {
-        $this->materialy = $materialy;
+        $this->opcjedodatkowe[] = $opcjedodatkowe;
 
         return $this;
     }
 
     /**
-     * Get materialy.
+     * Remove opcjedodatkowe.
      *
-     * @return \Entity\Materialy|null
+     * @param \Entity\Dodatkowe $opcjedodatkowe
+     *
+     * @return boolean TRUE if this collection contained the specified element, FALSE otherwise.
      */
-    public function getMaterialy()
+    public function removeOpcjedodatkowe(\Entity\Dodatkowe $opcjedodatkowe)
     {
-        return $this->materialy;
+        return $this->opcjedodatkowe->removeElement($opcjedodatkowe);
     }
 
     /**
-     * Set dodatkowe.
+     * Get opcjedodatkowe.
      *
-     * @param \Entity\Dodatkowe|null $dodatkowe
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function getOpcjedodatkowe()
+    {
+        return $this->opcjedodatkowe;
+    }
+
+    /**
+     * Add opcjematerialu.
+     *
+     * @param \Entity\Material $opcjematerialu
      *
      * @return Nieruchomosc
      */
-    public function setDodatkowe(\Entity\Dodatkowe $dodatkowe = null)
+    public function addOpcjematerialu(\Entity\Material $opcjematerialu)
     {
-        $this->dodatkowe = $dodatkowe;
+        $this->opcjematerialu[] = $opcjematerialu;
 
         return $this;
     }
 
     /**
-     * Get dodatkowe.
+     * Remove opcjematerialu.
      *
-     * @return \Entity\Dodatkowe|null
+     * @param \Entity\Material $opcjematerialu
+     *
+     * @return boolean TRUE if this collection contained the specified element, FALSE otherwise.
      */
-    public function getDodatkowe()
+    public function removeOpcjematerialu(\Entity\Material $opcjematerialu)
     {
-        return $this->dodatkowe;
+        return $this->opcjematerialu->removeElement($opcjematerialu);
+    }
+
+    /**
+     * Get opcjematerialu.
+     *
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function getOpcjematerialu()
+    {
+        return $this->opcjematerialu;
     }
 }

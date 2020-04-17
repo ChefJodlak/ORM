@@ -20,6 +20,11 @@ class Mieszkanie
     /**
      * @var int
      */
+    private $liczba_pokoi;
+
+    /**
+     * @var int
+     */
     private $rok_budowy;
 
     /**
@@ -82,6 +87,30 @@ class Mieszkanie
     }
 
     /**
+     * Set liczbaPokoi.
+     *
+     * @param int $liczbaPokoi
+     *
+     * @return Mieszkanie
+     */
+    public function setLiczbaPokoi($liczbaPokoi)
+    {
+        $this->liczba_pokoi = $liczbaPokoi;
+
+        return $this;
+    }
+
+    /**
+     * Get liczbaPokoi.
+     *
+     * @return int
+     */
+    public function getLiczbaPokoi()
+    {
+        return $this->liczba_pokoi;
+    }
+
+    /**
      * Set rokBudowy.
      *
      * @param int $rokBudowy
@@ -137,34 +166,5 @@ class Mieszkanie
     public function getNieruchomosc()
     {
         return $this->nieruchomosc;
-    }
-    /**
-     * @var int
-     */
-    private $liczba_pokoi;
-
-
-    /**
-     * Set liczbaPokoi.
-     *
-     * @param int $liczbaPokoi
-     *
-     * @return Mieszkanie
-     */
-    public function setLiczbaPokoi($liczbaPokoi)
-    {
-        $this->liczba_pokoi = $liczbaPokoi;
-
-        return $this;
-    }
-
-    /**
-     * Get liczbaPokoi.
-     *
-     * @return int
-     */
-    public function getLiczbaPokoi()
-    {
-        return $this->liczba_pokoi;
     }
 }

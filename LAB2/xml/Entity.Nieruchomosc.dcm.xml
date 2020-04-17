@@ -12,10 +12,9 @@
         <field name="cena_m2" type="float" />
 
         <one-to-one field="mieszkanie" target-entity="Mieszkanie" mapped-by="nieruchomosc" />
-        <one-to-one field="domy" target-entity="Domy" mapped-by="nieruchomosc" />
-	<one-to-one field="grunty" target-entity="Grunty" mapped-by="nieruchomosc" />
-	<one-to-one field="materialy" target-entity="Materialy" mapped-by="nieruchomosc" />
-	<one-to-one field="dodatkowe" target-entity="Dodatkowe" mapped-by="dodatkowe" />
+        <one-to-one field="dom" target-entity="Domy" mapped-by="nieruchomosc" />
+        <one-to-one field="grunt" target-entity="Grunty" mapped-by="nieruchomosc" />
+
         <many-to-one field="miasto" target-entity="Miasto" />
         <many-to-many field="opcjekomunikacji" target-entity="Komunikacja">
             <join-columns>
@@ -23,6 +22,22 @@
             </join-columns>
             <inverse-join-columns>
                 <join-column name="komunikacja_id" referenced-column-name="id" />
+            </inverse-join-columns>
+        </many-to-many>
+        <many-to-many field="opcjedodatkowe" target-entity="Dodatkowe">
+            <join-columns>
+                <join-column name="nieruchomosc_id" referenced-column-name="id" />
+            </join-columns>
+            <inverse-join-columns>
+                <join-column name="dodatkowe_id" referenced-column-name="id" />
+            </inverse-join-columns>
+        </many-to-many>
+        <many-to-many field="opcjematerialu" target-entity="Materialy">
+            <join-columns>
+                <join-column name="nieruchomosc_id" referenced-column-name="id" />
+            </join-columns>
+            <inverse-join-columns>
+                <join-column name="material_id" referenced-column-name="id" />
             </inverse-join-columns>
         </many-to-many>
     </entity>

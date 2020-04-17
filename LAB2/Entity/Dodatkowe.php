@@ -3,9 +3,9 @@
 namespace Entity;
 
 /**
- * Miasto
+ * Dodatkowe
  */
-class Miasto
+class Dodatkowe
 {
     /**
      * @var string
@@ -18,9 +18,9 @@ class Miasto
     private $id;
 
     /**
-     * @var \Entity\Powiat
+     * @var \Entity\Nieruchomosc
      */
-    private $powiat;
+    private $nieruchomosci;
 
 
     /**
@@ -28,7 +28,7 @@ class Miasto
      *
      * @param string $nazwa
      *
-     * @return Miasto
+     * @return Dodatkowe
      */
     public function setNazwa($nazwa)
     {
@@ -58,26 +58,26 @@ class Miasto
     }
 
     /**
-     * Set powiat.
+     * Set nieruchomosci.
      *
-     * @param \Entity\Powiat|null $powiat
+     * @param \Entity\Nieruchomosc|null $nieruchomosci
      *
-     * @return Miasto
+     * @return Dodatkowe
      */
-    public function setPowiat(\Entity\Powiat $powiat = null)
+    public function setNieruchomosci(\Entity\Nieruchomosc $nieruchomosci = null)
     {
-        $this->powiat = $powiat;
+        $this->nieruchomosci = $nieruchomosci;
 
         return $this;
     }
 
     /**
-     * Get powiat.
+     * Get nieruchomosci.
      *
-     * @return \Entity\Powiat|null
+     * @return \Entity\Nieruchomosc|null
      */
-    public function getPowiat()
+    public function getNieruchomosci()
     {
-        return $this->powiat;
+        return $this->nieruchomosci;
     }
 }

@@ -3,9 +3,9 @@
 namespace Entity;
 
 /**
- * Miasto
+ * Wojewodztwa
  */
-class Miasto
+class Wojewodztwa
 {
     /**
      * @var string
@@ -17,18 +17,13 @@ class Miasto
      */
     private $id;
 
-    /**
-     * @var \Entity\Powiat
-     */
-    private $powiat;
-
 
     /**
      * Set nazwa.
      *
      * @param string $nazwa
      *
-     * @return Miasto
+     * @return Wojewodztwa
      */
     public function setNazwa($nazwa)
     {
@@ -55,29 +50,5 @@ class Miasto
     public function getId()
     {
         return $this->id;
-    }
-
-    /**
-     * Set powiat.
-     *
-     * @param \Entity\Powiat|null $powiat
-     *
-     * @return Miasto
-     */
-    public function setPowiat(\Entity\Powiat $powiat = null)
-    {
-        $this->powiat = $powiat;
-
-        return $this;
-    }
-
-    /**
-     * Get powiat.
-     *
-     * @return \Entity\Powiat|null
-     */
-    public function getPowiat()
-    {
-        return $this->powiat;
     }
 }
