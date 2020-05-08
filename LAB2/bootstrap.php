@@ -12,7 +12,7 @@ $connectionOptions = [
     'port' => '3306',
     'dbname' => 'nieruchomosci',
     'user' => 'root',
-    'password' => 'fckgwrhqq2',
+    'password' => '',
     'charset' => 'utf8'
 ];
 

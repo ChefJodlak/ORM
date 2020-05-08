@@ -3,9 +3,9 @@
 namespace Entity;
 
 /**
- * Domy
+ * Dom
  */
-class Domy
+class Dom
 {
     /**
      * @var float
@@ -33,7 +33,7 @@ class Domy
      *
      * @param float $powierzchniaDzialki
      *
-     * @return Domy
+     * @return Dom
      */
     public function setPowierzchniaDzialki($powierzchniaDzialki)
     {
@@ -57,7 +57,7 @@ class Domy
      *
      * @param int $rokBudowy
      *
-     * @return Domy
+     * @return Dom
      */
     public function setRokBudowy($rokBudowy)
     {
@@ -91,7 +91,7 @@ class Domy
      *
      * @param \Entity\Nieruchomosc|null $nieruchomosc
      *
-     * @return Domy
+     * @return Dom
      */
     public function setNieruchomosc(\Entity\Nieruchomosc $nieruchomosc = null)
     {

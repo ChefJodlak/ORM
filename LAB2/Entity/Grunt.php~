@@ -3,9 +3,9 @@
 namespace Entity;
 
 /**
- * Grunty
+ * Grunt
  */
-class Grunty
+class Grunt
 {
     /**
      * @var bool
@@ -28,7 +28,7 @@ class Grunty
      *
      * @param bool $pozwolenieNaBudowe
      *
-     * @return Grunty
+     * @return Grunt
      */
     public function setPozwolenieNaBudowe($pozwolenieNaBudowe)
     {
@@ -62,7 +62,7 @@ class Grunty
      *
      * @param \Entity\Nieruchomosc|null $nieruchomosc
      *
-     * @return Grunty
+     * @return Grunt
      */
     public function setNieruchomosc(\Entity\Nieruchomosc $nieruchomosc = null)
     {

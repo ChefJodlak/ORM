@@ -24,4 +24,13 @@
 				<li class="nav-item">
 					<a class="nav-link" href="nieruchomosci.dodaj.php?typ=grunt">Dodaj grunt</a>
 				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="nieruchomosci.przegladaj.php?typ=mieszkania">Przegladaj mieszkania</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="nieruchomosci.przegladaj.php?typ=domy">Przegladaj domy</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="nieruchomosci.przegladaj.php?typ=grunty">Przegladaj grunty</a>
+				</li>
 			</ul>

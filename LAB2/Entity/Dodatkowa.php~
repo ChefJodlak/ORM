@@ -3,9 +3,9 @@
 namespace Entity;
 
 /**
- * Dodatkowe
+ * Dodatkowa
  */
-class Dodatkowe
+class Dodatkowa
 {
     /**
      * @var string
@@ -20,7 +20,7 @@ class Dodatkowe
     /**
      * @var \Entity\Nieruchomosc
      */
-    private $nieruchomosci;
+    private $nieruchomosc;
 
 
     /**
@@ -28,7 +28,7 @@ class Dodatkowe
      *
      * @param string $nazwa
      *
-     * @return Dodatkowe
+     * @return Dodatkowa
      */
     public function setNazwa($nazwa)
     {
@@ -58,26 +58,26 @@ class Dodatkowe
     }
 
     /**
-     * Set nieruchomosci.
+     * Set nieruchomosc.
      *
-     * @param \Entity\Nieruchomosc|null $nieruchomosci
+     * @param \Entity\Nieruchomosc|null $nieruchomosc
      *
-     * @return Dodatkowe
+     * @return Dodatkowa
      */
-    public function setNieruchomosci(\Entity\Nieruchomosc $nieruchomosci = null)
+    public function setNieruchomosc(\Entity\Nieruchomosc $nieruchomosc = null)
     {
-        $this->nieruchomosci = $nieruchomosci;
+        $this->nieruchomosc = $nieruchomosc;
 
         return $this;
     }
 
     /**
-     * Get nieruchomosci.
+     * Get nieruchomosc.
      *
      * @return \Entity\Nieruchomosc|null
      */
-    public function getNieruchomosci()
+    public function getNieruchomosc()
     {
-        return $this->nieruchomosci;
+        return $this->nieruchomosc;
     }
 }

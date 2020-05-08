@@ -1,4 +1,3 @@
-  
 <?php
 require_once 'bootstrap.php';
 
@@ -26,12 +25,10 @@ if (!empty($_POST)) {
     $v->rule('min', ['cena', 'cena_m2', 'powierzchnia'], 0);
 
     if($_GET['typ'] == 'mieszkanie') {
-        $v->rule('required', ['pietro', 'liczba_pieter', 'rok_budowy', 'liczba_pokoi']);
-        $v->rule('required', ['pietro', 'liczba_pieter', 'rok_budowy', 'liczba_pokoi']);
-        $v->rule('min', 'rok_budowy', 1900);
+        $v->rule('required', ['pietro', 'liczba_pieter', 'rok_budowy_mieszkanie', 'liczba_pokoi']);
+        $v->rule('min', 'rok_budowy_mieszkanie', 1900);
     } else if($_GET['typ'] == 'dom') {
-        $v->rule('required', ['powierzchnia_dzialki']);
-        $v->rule('required', ['powierzchnia_dzialki']);
+        $v->rule('required', ['powierzchnia_dzialki', 'rok_budowy']);
         $v->rule('min', 'rok_budowy', 1900);
     }
 
@@ -63,8 +60,9 @@ if (!empty($_POST)) {
             $mieszkanie->setPietro($_POST['pietro']);
             $mieszkanie->setLiczbaPieter($_POST['liczba_pieter']);
             $mieszkanie->setLiczbaPokoi($_POST['liczba_pokoi']);
-            $mieszkanie->setRokBudowy($_POST['rok_budowy']);
+            $mieszkanie->setRokBudowy($_POST['rok_budowy_mieszkanie']);
             $mieszkanie->setNieruchomosc($nieruchomosc);
+            $em->persist($mieszkanie);
         } else if($_GET['typ'] == 'dom') {
             $dom = new Entity\Dom();
             $dom->setPowierzchniaDzialki($_POST['powierzchnia_dzialki']);
@@ -187,11 +185,11 @@ require_once 'header.php';
                 <label>Rok budowy</label>
                 <input
                         type="text"
-                        name="rok_budowy"
-                        value="<?= $_POST['rok_budowy'] ?? '' ?>"
-                        class="form-control <?= empty($bledy['rok_budowy']) ?: 'is-invalid' ?>"
+                        name="rok_budowy_mieszkanie"
+                        value="<?= $_POST['rok_budowy_mieszkanie'] ?? '' ?>"
+                        class="form-control <?= empty($bledy['rok_budowy_mieszkanie']) ?: 'is-invalid' ?>"
                 />
-                <div class="invalid-feedback"><?= implode('<br>', $bledy['rok_budowy'] ?? []) ?></div>
+                <div class="invalid-feedback"><?= implode('<br>', $bledy['rok_budowy_mieszkanie'] ?? []) ?></div>
             </div>
         </div>
         <!-- dom -->

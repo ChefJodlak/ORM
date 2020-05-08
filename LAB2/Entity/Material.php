@@ -3,9 +3,9 @@
 namespace Entity;
 
 /**
- * Wojewodztwa
+ * Material
  */
-class Wojewodztwa
+class Material
 {
     /**
      * @var string
@@ -23,7 +23,7 @@ class Wojewodztwa
      *
      * @param string $nazwa
      *
-     * @return Wojewodztwa
+     * @return Material
      */
     public function setNazwa($nazwa)
     {

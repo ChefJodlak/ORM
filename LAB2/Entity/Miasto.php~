@@ -17,11 +17,6 @@ class Miasto
      */
     private $id;
 
-    /**
-     * @var \Entity\Powiat
-     */
-    private $powiat;
-
 
     /**
      * Set nazwa.
@@ -56,6 +51,11 @@ class Miasto
     {
         return $this->id;
     }
+    /**
+     * @var \Entity\Powiat
+     */
+    private $powiat;
+
 
     /**
      * Set powiat.

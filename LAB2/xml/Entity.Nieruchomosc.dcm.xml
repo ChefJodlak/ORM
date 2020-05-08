@@ -5,17 +5,30 @@
         <id name="id" type="integer">
             <generator strategy="AUTO" />
         </id>
-        <field name="typ_oferty" type="string" length="5" />
-	<field name="numer" type="string" />
+        <field name="typ_oferty" type="string" length="8" />
+        <field name="numer" type="string" length="30" />
         <field name="powierzchnia" type="float" />
         <field name="cena" type="float" />
         <field name="cena_m2" type="float" />
 
-        <one-to-one field="mieszkanie" target-entity="Mieszkanie" mapped-by="nieruchomosc" />
-        <one-to-one field="dom" target-entity="Domy" mapped-by="nieruchomosc" />
-        <one-to-one field="grunt" target-entity="Grunty" mapped-by="nieruchomosc" />
-
+        <one-to-one field="mieszkanie" target-entity="Mieszkanie" mapped-by="nieruchomosc"> 
+            <cascade> <cascade-persist /> </cascade> 
+        </one-to-one>
+        <one-to-one field="dom" target-entity="Dom" mapped-by="nieruchomosc"> 
+            <cascade> <cascade-persist /> </cascade> 
+        </one-to-one>
+        <one-to-one field="grunt" target-entity="Grunt" mapped-by="nieruchomosc"> 
+            <cascade> <cascade-persist /> </cascade> 
+        </one-to-one>
         <many-to-one field="miasto" target-entity="Miasto" />
+        <many-to-many field="dodatkowe" target-entity="Dodatkowa">
+            <join-columns>
+                <join-column name="nieruchomosc_id" referenced-column-name="id" />
+            </join-columns>
+            <inverse-join-columns>
+                <join-column name="dodatkowe_id" referenced-column-name="id" />
+            </inverse-join-columns>
+        </many-to-many>
         <many-to-many field="opcjekomunikacji" target-entity="Komunikacja">
             <join-columns>
                 <join-column name="nieruchomosc_id" referenced-column-name="id" />
@@ -24,15 +37,7 @@
                 <join-column name="komunikacja_id" referenced-column-name="id" />
             </inverse-join-columns>
         </many-to-many>
-        <many-to-many field="opcjedodatkowe" target-entity="Dodatkowe">
-            <join-columns>
-                <join-column name="nieruchomosc_id" referenced-column-name="id" />
-            </join-columns>
-            <inverse-join-columns>
-                <join-column name="dodatkowe_id" referenced-column-name="id" />
-            </inverse-join-columns>
-        </many-to-many>
-        <many-to-many field="opcjematerialu" target-entity="Materialy">
+        <many-to-many field="materialy" target-entity="Material">
             <join-columns>
                 <join-column name="nieruchomosc_id" referenced-column-name="id" />
             </join-columns>

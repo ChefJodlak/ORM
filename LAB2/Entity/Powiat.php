@@ -18,9 +18,9 @@ class Powiat
     private $id;
 
     /**
-     * @var \Entity\Wojewodztwa
+     * @var \Entity\Wojewodztwo
      */
-    private $wojewodztwa;
+    private $wojewodztwo;
 
 
     /**
@@ -58,26 +58,26 @@ class Powiat
     }
 
     /**
-     * Set wojewodztwa.
+     * Set wojewodztwo.
      *
-     * @param \Entity\Wojewodztwa|null $wojewodztwa
+     * @param \Entity\Wojewodztwo|null $wojewodztwo
      *
      * @return Powiat
      */
-    public function setWojewodztwa(\Entity\Wojewodztwa $wojewodztwa = null)
+    public function setWojewodztwo(\Entity\Wojewodztwo $wojewodztwo = null)
     {
-        $this->wojewodztwa = $wojewodztwa;
+        $this->wojewodztwo = $wojewodztwo;
 
         return $this;
     }
 
     /**
-     * Get wojewodztwa.
+     * Get wojewodztwo.
      *
-     * @return \Entity\Wojewodztwa|null
+     * @return \Entity\Wojewodztwo|null
      */
-    public function getWojewodztwa()
+    public function getWojewodztwo()
     {
-        return $this->wojewodztwa;
+        return $this->wojewodztwo;
     }
 }
