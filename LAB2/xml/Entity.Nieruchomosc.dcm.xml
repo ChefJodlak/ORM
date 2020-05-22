@@ -12,13 +12,13 @@
         <field name="cena_m2" type="float" />
 
         <one-to-one field="mieszkanie" target-entity="Mieszkanie" mapped-by="nieruchomosc"> 
-            <cascade> <cascade-persist /> </cascade> 
+            <cascade> <cascade-persist /> <cascade-remove /> </cascade> 
         </one-to-one>
         <one-to-one field="dom" target-entity="Dom" mapped-by="nieruchomosc"> 
-            <cascade> <cascade-persist /> </cascade> 
+            <cascade> <cascade-persist /> <cascade-remove /> </cascade> 
         </one-to-one>
         <one-to-one field="grunt" target-entity="Grunt" mapped-by="nieruchomosc"> 
-            <cascade> <cascade-persist /> </cascade> 
+            <cascade> <cascade-persist /> <cascade-remove /> </cascade> 
         </one-to-one>
         <many-to-one field="miasto" target-entity="Miasto" />
         <many-to-many field="dodatkowe" target-entity="Dodatkowa">
@@ -28,6 +28,7 @@
             <inverse-join-columns>
                 <join-column name="dodatkowe_id" referenced-column-name="id" />
             </inverse-join-columns>
+            <cascade> <cascade-remove /> </cascade> 
         </many-to-many>
         <many-to-many field="opcjekomunikacji" target-entity="Komunikacja">
             <join-columns>
@@ -36,6 +37,7 @@
             <inverse-join-columns>
                 <join-column name="komunikacja_id" referenced-column-name="id" />
             </inverse-join-columns>
+             <cascade> <cascade-remove /> </cascade> 
         </many-to-many>
         <many-to-many field="materialy" target-entity="Material">
             <join-columns>
@@ -44,6 +46,7 @@
             <inverse-join-columns>
                 <join-column name="material_id" referenced-column-name="id" />
             </inverse-join-columns>
+             <cascade> <cascade-remove /> </cascade> 
         </many-to-many>
     </entity>
 </doctrine-mapping>

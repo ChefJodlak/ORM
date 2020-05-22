@@ -315,6 +315,20 @@ class Nieruchomosc
         return $this->materialy;
     }
 
+
+    ///////////////////////////////
+	
+	public function czyOpcjaKomunikacji($id)
+	{
+		foreach($this->opcjekomunikacji as $opcja) {
+			if ($opcja->getId() == $id) {
+				return true;
+			}
+		}
+			
+		return false;
+	}
+
     public function pobierzKomunikacje()
     {
         $komunikacja = [];

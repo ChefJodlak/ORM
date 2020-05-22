@@ -314,4 +314,136 @@ class Nieruchomosc
     {
         return $this->materialy;
     }
+
+
+    ///////////////////////////////
+	
+	public function czyOpcjaKomunikacji($id)
+	{
+		foreach($this->opcjekomunikacji as $opcja) {
+			if ($opcja->getId() == $id) {
+				return true;
+			}
+		}
+			
+		return false;
+	}
+
+    public function pobierzKomunikacje()
+    {
+        $komunikacja = [];
+        foreach ($this->getOpcjekomunikacji() as $k) {
+            $komunikacja[] = $k->getNazwa();
+        }
+        return empty($komunikacja) ? '-' : implode(', ', $komunikacja);
+    }
+
+    public function pobierzDodatkowe()
+    {
+        $dodatkowe = [];
+        foreach ($this->getDodatkowe() as $k) {
+            $dodatkowe[] = $k->getNazwa();
+        }
+        return empty($dodatkowe) ? '-' : implode(', ', $dodatkowe);
+    }
+
+    /**
+     * @var \Entity\Dom
+     */
+    private $dom;
+
+    /**
+     * @var \Entity\Grunt
+     */
+    private $grunt;
+
+    /**
+     * @var \Doctrine\Common\Collections\Collection
+     */
+    private $dodatkowe;
+
+
+    /**
+     * Set dom.
+     *
+     * @param \Entity\Dom|null $dom
+     *
+     * @return Nieruchomosc
+     */
+    public function setDom(\Entity\Dom $dom = null)
+    {
+        $this->dom = $dom;
+
+        return $this;
+    }
+
+    /**
+     * Get dom.
+     *
+     * @return \Entity\Dom|null
+     */
+    public function getDom()
+    {
+        return $this->dom;
+    }
+
+    /**
+     * Set grunt.
+     *
+     * @param \Entity\Grunt|null $grunt
+     *
+     * @return Nieruchomosc
+     */
+    public function setGrunt(\Entity\Grunt $grunt = null)
+    {
+        $this->grunt = $grunt;
+
+        return $this;
+    }
+
+    /**
+     * Get grunt.
+     *
+     * @return \Entity\Grunt|null
+     */
+    public function getGrunt()
+    {
+        return $this->grunt;
+    }
+
+    /**
+     * Add dodatkowe.
+     *
+     * @param \Entity\Dodatkowa $dodatkowe
+     *
+     * @return Nieruchomosc
+     */
+    public function addDodatkowe(\Entity\Dodatkowa $dodatkowe)
+    {
+        $this->dodatkowe[] = $dodatkowe;
+
+        return $this;
+    }
+
+    /**
+     * Remove dodatkowe.
+     *
+     * @param \Entity\Dodatkowa $dodatkowe
+     *
+     * @return boolean TRUE if this collection contained the specified element, FALSE otherwise.
+     */
+    public function removeDodatkowe(\Entity\Dodatkowa $dodatkowe)
+    {
+        return $this->dodatkowe->removeElement($dodatkowe);
+    }
+
+    /**
+     * Get dodatkowe.
+     *
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function getDodatkowe()
+    {
+        return $this->dodatkowe;
+    }
 }
